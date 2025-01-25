@@ -1,0 +1,5 @@
+train: /content/gdrive/MyDrive/Detection/dataset/train/images/  # Path to training images
+val: /content/gdrive/MyDrive/Detection/dataset/val/images/    # Path to validation images
+nc: 6          # Number of classes (0–9)
+names: ['0', '1', '2', '3', '4', '5']  # Class names
+
