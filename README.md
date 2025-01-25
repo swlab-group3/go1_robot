@@ -21,17 +21,21 @@ ros2 humble, YOLO v8, ubuntu 22.04, gazebo11, rviz2
 : ros2 launch go1_gazebo spawn_go1.launch.py
 
 2. Run this once the last controller plugin (RL_calf_controller) has loaded successfully
+
 : ros2 run unitree_guide2 junior_ctrl
 
 3. Once the costmaps are visible in rviz, switch the mode in *window 2* by pressing '2'. The robot will stand up. Switch to nav mode by pressing '5'.
 
 4. Run the navigation file
+
 : ros2 launch go1_navigation navigation.launch.py
 
 7. Control the robot manually (refer to below "Manual Control Options" for other control options)
+
 : ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 8. Implement the yolov8 object detection
+
 : ros2 run go1_detection yolov8_number_detection_node
 
 9. Place an object(ex. Number box, Person, Construction Cones) in front of the robot in Gazebo, and manually control the robot to see if the robot recognizes the object as it moves.
