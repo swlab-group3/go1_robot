@@ -24,21 +24,31 @@ ros2 humble, YOLO v8, ubuntu 22.04, gazebo11, rviz2
 
 3. ros2 launch go1_navigation navigation.launch.py
 
-4. ros2 run teleop_twist_keyboard teleop_twist_keyboard
-   or -> ros2 topic pub /cmd_vel geometry_msgs/msg/Twist '{linear: {x: 0.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}' -r 10 
+4. Control the robot manually
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
-5. ros2 run go1_detection yolov8_number_detection_node
+6. ros2 run go1_detection yolov8_number_detection_node
+
+7. Place an object(ex. Number box, Person, Construction Cones) in front of the robot in Gazebo, and manually control the robot to see if the robot recognizes the object as it moves.
+ 
+## Manual Control Options
+1. Keyboard Control
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+2. Joystick Control
+ros2 run joy joy_node
+3. Velocity Commands
+ros2 topic pub /cmd_vel geometry_msgs/msg/Twist '{linear: {x: 0.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}' -r 10
 
 ## Optional - Training 
 If you want to get different detection model, follow these steps:
 
-1.Run generate_images.py to create images and labels. 
+1. Run generate_images.py to create images and labels. 
 
-2.For training dataset, copy these to /Detection/dataset/train. For validation dataset, generate separately again by running python file, and copy some of images and labels to /Detection/dataset/val.
+2. For training dataset, copy these to /Detection/dataset/train. For validation dataset, generate separately again by running python file, and copy some of images and labels to /Detection/dataset/val.
 
-3.For training phase, upload Detection folder to Google Drive-> open folder, right click on detection.ipynb -> open with Google Colab -> Run all the cells.
+3. For training phase, upload Detection folder to Google Drive-> open folder, right click on detection.ipynb -> open with Google Colab -> Run all the cells.
 
-4.Copy runs/detect/train/weights/best.pt to the models/.
+4. Copy runs/detect/train/weights/best.pt to the models/.
 
 
 ## Remarks
