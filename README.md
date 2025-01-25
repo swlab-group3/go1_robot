@@ -96,8 +96,8 @@ Manually control the robot to check if it recognizes the object as it moves.
 
 Follow these steps to train a new YOLO detection model:
 
-### 1. **Run the go1_robot/go1_detection/training/generate_images.py script to create images and labels for the new dataset:**
-
+### 1. **Run the following .py script to create images and labels for the new dataset:**
+   go1_robot/go1_detection/training/generate_images.py
 
 ### 2. **Copy the generated data to the appropriate dataset folders:**
    - Training dataset : Copy to go1_robot/go1_detection/training/Detection/dataset/train.
