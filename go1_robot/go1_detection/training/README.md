@@ -1,6 +1,6 @@
 ## **Optional: Training a Custom YOLO Model**
 
-Follow these steps to train a new YOLOv8 detection model:
+Follow these steps to train a new YOLO detection model:
 
 1. Run the go1_robot/go1_detection/training/generate_images.py script to create images and labels for the new dataset:
 ```bash
