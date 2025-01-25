@@ -114,4 +114,7 @@ Follow these steps to train a new YOLO detection model:
 
 --- 
 ## **Remarks**
-To improve accuracy, train the YOLO model with a larger dataset.
+For our model, we trained the YOLO model with numbers from 0 to 5 for simplicity.
+In order to obtain a more generalized model, train with a larger dataset containing double to triple digits.
+
+
