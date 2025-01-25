@@ -17,27 +17,32 @@ ros2 humble, YOLO v8, ubuntu 22.04, gazebo11, rviz2
 
 ## Implementation Steps
 
-1. ros2 launch go1_gazebo spawn_go1.launch.py
+1. Spawn the robot in gazebo and rviz
+: ros2 launch go1_gazebo spawn_go1.launch.py
 
-2. ros2 run unitree_guide2 junior_ctrl **Run this once the last controller plugin (*RL_calf_controller*) has loaded successfully**
-   : Once the costmaps are visible in rviz, switch the mode in *window 2* by pressing '2'. The robot will stand up. Switch to nav mode by pressing '5'.
+2. Run this once the last controller plugin (RL_calf_controller) has loaded successfully
+: ros2 run unitree_guide2 junior_ctrl
 
-3. ros2 launch go1_navigation navigation.launch.py
+3. Once the costmaps are visible in rviz, switch the mode in *window 2* by pressing '2'. The robot will stand up. Switch to nav mode by pressing '5'.
 
-4. Control the robot manually
-ros2 run teleop_twist_keyboard teleop_twist_keyboard
+4. Run the navigation file
+: ros2 launch go1_navigation navigation.launch.py
 
-6. ros2 run go1_detection yolov8_number_detection_node
+7. Control the robot manually (refer to below "Manual Control Options" for other control options)
+: ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
-7. Place an object(ex. Number box, Person, Construction Cones) in front of the robot in Gazebo, and manually control the robot to see if the robot recognizes the object as it moves.
+8. Implement the yolov8 object detection
+: ros2 run go1_detection yolov8_number_detection_node
+
+9. Place an object(ex. Number box, Person, Construction Cones) in front of the robot in Gazebo, and manually control the robot to see if the robot recognizes the object as it moves.
  
 ## Manual Control Options
 1. Keyboard Control
-ros2 run teleop_twist_keyboard teleop_twist_keyboard
+: ros2 run teleop_twist_keyboard teleop_twist_keyboard
 2. Joystick Control
-ros2 run joy joy_node
+: ros2 run joy joy_node
 3. Velocity Commands
-ros2 topic pub /cmd_vel geometry_msgs/msg/Twist '{linear: {x: 0.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}' -r 10
+: ros2 topic pub /cmd_vel geometry_msgs/msg/Twist '{linear: {x: 0.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}' -r 10
 
 ## Optional - Training 
 If you want to get different detection model, follow these steps:
