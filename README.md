@@ -91,9 +91,9 @@ ros2 run go1_detection yolov8_number_detection_node
 Place an object (e.g., number box, person, construction cones) in front of the robot in Gazebo.
 Manually control the robot to check if it recognizes the object as it moves.
 
-## **Optional: Training a Custom YOLOv8 Model**
+## **Optional: Training a Custom YOLO Model**
 
-Follow these steps to train a new YOLOv8 detection model:
+Follow these steps to train a new YOLO detection model:
 
 1. Run the go1_robot/go1_detection/training/generate_images.py script to create images and labels for the new dataset:
 ```bash
