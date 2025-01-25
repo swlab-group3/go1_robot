@@ -31,9 +31,13 @@ ros2 humble, YOLO v8, ubuntu 22.04, gazebo11, rviz2
 
 ## Optional - Training 
 If you want to get different detection model, follow these steps:
+
 1.Run generate_images.py to create images and labels. 
+
 2.For training dataset, copy these to /Detection/dataset/train. For validation dataset, generate separately again by running python file, and copy some of images and labels to /Detection/dataset/val.
+
 3.For training phase, upload Detection folder to Google Drive-> open folder, right click on detection.ipynb -> open with Google Colab -> Run all the cells.
+
 4.Copy runs/detect/train/weights/best.pt to the models/.
 
 
