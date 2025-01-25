@@ -29,5 +29,21 @@ ros2 humble, YOLO v8, ubuntu 22.04, gazebo11, rviz2
 
 5. ros2 run go1_detection yolov8_number_detection_node
 
+## Optional - Training 
+If you want to train in a different dataset, follow these steps:
+1.Run generate_images.py to create images and labels. 
+2. 
+3.
+4.
+
+For training dataset, copy these to /Detection/dataset/train. For validation dataset, generate separately again by running python file, and copy some of images and labels to /Detection/dataset/val.  
+Upload Detection folder to Drive
+Open folder in drive, right click on detection.ipynb, open with Google Colab. Run the cells.
+
 ## Remarks
 The yolo model should be trained with a bigger dataset in order to improve accuracy.
+
+
+
+
+
