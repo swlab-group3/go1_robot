@@ -110,7 +110,7 @@ Follow these steps to train a new YOLO detection model:
    - Test the model by supplying example images to /Detection/test_images. Prediction results are saved to /Detection/predictions. 
 
 ### 4. **Once training is complete**
-   - Download the best model which is runs/detect/train/weights/best.pt . Replace this file (best.pt) with the model in the go1_robot/go1_detection/models folder to be used in go1_robot/go1_detection/go1_detection/yolov8_number_detection_node.py.
+   - Download the best model which is in the google drive path : runs/detect/train/weights/best.pt . Replace this file (best.pt) with the model in the go1_robot/go1_detection/models folder to be used in go1_robot/go1_detection/go1_detection/yolov8_number_detection_node.py.
 
 --- 
 ## **Remarks**
