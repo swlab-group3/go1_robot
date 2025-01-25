@@ -1,4 +1,4 @@
-## **Optional: Training a Custom YOLOv8 Model**
+## **Optional: Training a Custom YOLO Model**
 
 Follow these steps to train a new YOLOv8 detection model:
 
