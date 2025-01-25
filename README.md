@@ -87,31 +87,28 @@ ros2 run go1_detection yolov8_number_detection_node
 
 ### 7. Test Object Detection in Simulation
 
-    Place an object (e.g., number box, person, construction cones) in front of the robot in Gazebo.
-    Manually control the robot to check if it recognizes the object as it moves.
+Place an object (e.g., number box, person, construction cones) in front of the robot in Gazebo.
+Manually control the robot to check if it recognizes the object as it moves.
 
 ## Optional: Training a Custom YOLOv8 Model
 
 Follow these steps to train a new YOLOv8 model:
 
-    Run the generate_images.py script to create images and labels:
+1. Run the generate_images.py script to create images and labels:
 
-    python generate_images.py
+ python generate_images.py
 
-    Copy the generated data to the appropriate dataset folders:
-        Training dataset:
-        Copy to Detection/dataset/train.
-        Validation dataset:
-        Run generate_images.py again and copy a portion of the data to Detection/dataset/val.
+2. Copy the generated data to the appropriate dataset folders:
+Training dataset : Copy to Detection/dataset/train.
+Validation dataset : Run generate_images.py again and copy a portion of the data to Detection/dataset/val.
 
-    For training:
-        Upload the Detection folder to Google Drive.
-        Open the folder, right-click on detection.ipynb, and select Open with Google Colab.
-        Run all the cells in the notebook.
+3. For training:
+Upload the Detection folder to Google Drive.
+Open the folder, right-click on detection.ipynb, and select Open with Google Colab.
+Run all the cells in the notebook.
 
-    Once training is complete:
-        Copy the trained model file (best.pt) from runs/detect/train/weights/ to the models/ folder.
+4. Once training is complete:
+Copy the trained model file (best.pt) from runs/detect/train/weights/ to the models/ folder.
 
 ## Remarks
-
-    To improve accuracy, train the YOLO model with a larger dataset.
+To improve accuracy, train the YOLO model with a larger dataset.
