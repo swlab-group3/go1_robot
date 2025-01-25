@@ -91,14 +91,13 @@ ros2 run go1_detection yolov8_number_detection_node
 Place an object (e.g., number box, person, construction cones) in front of the robot in Gazebo.
 Manually control the robot to check if it recognizes the object as it moves.
 
+--- 
 ## **Optional: Training a Custom YOLO Model**
 
 Follow these steps to train a new YOLO detection model:
 
 ### 1. **Run the go1_robot/go1_detection/training/generate_images.py script to create images and labels for the new dataset:**
-```bash
- python generate_images.py
-``` 
+
 
 ### 2. **Copy the generated data to the appropriate dataset folders:**
    - Training dataset : Copy to go1_robot/go1_detection/training/Detection/dataset/train.
@@ -113,5 +112,6 @@ Follow these steps to train a new YOLO detection model:
 ### 4. **Once training is complete:**
    - Download the best model which is runs/detect/train/weights/best.pt . Replace this file (best.pt) with the model in the go1_robot/go1_detection/models folder.
 
+--- 
 ## **Remarks**
 To improve accuracy, train the YOLO model with a larger dataset.
