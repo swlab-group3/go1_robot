@@ -37,78 +37,80 @@ Ensure the following dependencies are installed:
 
 ### 1. **Spawn the Robot**
 Launch the robot in Gazebo and Rviz:  
+```bash
 ros2 launch go1_gazebo spawn_go1.launch.py
+```
+### 2. **Start the Controller**
 
-
-### 2. Start the Controller
-
-Run this command after the RL_calf_controller has successfully loaded:
-
+Run the following command after the `RL_calf_controller` has successfully loaded:  
+```bash
 ros2 run unitree_guide2 junior_ctrl
+```
+### 3. **Switch Robot Modes**
 
-### 3. Switch Robot Modes
+- Wait for the costmaps to appear in Rviz.
+- In a second terminal window, switch the robot modes by pressing the following keys:
+  - Press `2`: The robot will stand up.
+  - Press `5`: Switch to navigation mode.
 
-    Wait for the costmaps to appear in Rviz.
-    In Window 2, switch the robot modes:
-        Press 2: The robot will stand up.
-        Press 5: Switch to navigation mode.
+### 4. **Run Navigation**
 
-### 4. Run Navigation
-
-Launch the navigation file:
-
+Launch the navigation file:  
+```bash
 ros2 launch go1_navigation navigation.launch.py
+```
 
-### 5. Manual Control
+### 5. **Manual Control**
 
 Choose one of the following control methods:
 
-    Keyboard Control:
-    Use the keyboard to control the robot:
-
-ros2 run teleop_twist_keyboard teleop_twist_keyboard
-
-Joystick Control:
-Use a joystick to control the robot:
-
-ros2 run joy joy_node
-
-Velocity Commands:
-Publish velocity commands directly:
-
-    ros2 topic pub /cmd_vel geometry_msgs/msg/Twist \
-    '{linear: {x: 0.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}' -r 10
-
-### 6. Run YOLOv8 Object Detection
+- **Keyboard Control:**  
+  Use the keyboard to control the robot:  
+  ```bash
+  ros2 run teleop_twist_keyboard teleop_twist_keyboard
+  ``` 
+- **Joystick Control:**
+  Use a joystick to control the robot:
+  ```bash
+  ros2 run joy joy_node
+  ```
+- **Velocity Commands:**
+  Publish velocity commands directly:
+  ```bash
+  ros2 topic pub /cmd_vel geometry_msgs/msg/Twist \
+    '{linear: {x: 0.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}' -r 10 
+  ```
+### 6. **Run YOLOv8 Object Detection**
 
 Start the YOLOv8 detection node:
-
+```bash
 ros2 run go1_detection yolov8_number_detection_node
-
-### 7. Test Object Detection in Simulation
+```
+### 7. **Test Object Detection in Simulation**
 
 Place an object (e.g., number box, person, construction cones) in front of the robot in Gazebo.
 Manually control the robot to check if it recognizes the object as it moves.
 
-## Optional: Training a Custom YOLOv8 Model
+## **Optional: Training a Custom YOLOv8 Model**
 
 Follow these steps to train a new YOLOv8 model:
 
 1. Run the generate_images.py script to create images and labels:
-
+```bash
  python generate_images.py
+``` 
 
 2. Copy the generated data to the appropriate dataset folders:
-Training dataset : Copy to Detection/dataset/train.
-Validation dataset : Run generate_images.py again and copy a portion of the data to Detection/dataset/val.
+   - Training dataset : Copy to Detection/dataset/train.
+   - Validation dataset : Run generate_images.py again and copy a portion of the data to Detection/dataset/val.
 
 3. For training:
-Upload the Detection folder to Google Drive.
-Open the folder, right-click on detection.ipynb, and select Open with Google Colab.
-Run all the cells in the notebook.
+   - Upload the Detection folder to Google Drive.
+   - Open the folder, right-click on detection.ipynb, and select Open with Google Colab.
+   - Run all the cells in the notebook.
 
 4. Once training is complete:
-Copy the trained model file (best.pt) from runs/detect/train/weights/ to the models/ folder.
+   - Copy the trained model file (best.pt) from runs/detect/train/weights/ to the models/ folder.
 
-## Remarks
+## **Remarks**
 To improve accuracy, train the YOLO model with a larger dataset.
